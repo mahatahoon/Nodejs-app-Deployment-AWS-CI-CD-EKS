@@ -1,0 +1,17 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: 
+      - main
+  pull_requests: 
+    branches:
+      - main
+jobs:
+  build:
+    run-on: ubuntu-latest
+    
+      
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
