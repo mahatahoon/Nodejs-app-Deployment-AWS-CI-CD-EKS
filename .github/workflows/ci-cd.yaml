@@ -20,9 +20,9 @@ jobs:
       # Docker image Build
       - name: Build Docker Image
         run: |
-          docker build -t actions-app:${{ github.sha}} .
+          docker buildx build -t actions-app:${{ github.sha}} .
           docker tag actions-app:${{ github.sha}} ${{ secrets.ECR_REPOSITORY_URI}}/actions-cicd:latest
-          
+
       # Set up AWS Credentials
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
