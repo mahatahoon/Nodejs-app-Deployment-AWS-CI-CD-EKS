@@ -7,7 +7,7 @@ WORKDIR /app
 COPY package*.json ./
 
 #Install the NodeJs dependencies 
-RUN npm install
+RUN npm install --only=production
 
 COPY . .
 
