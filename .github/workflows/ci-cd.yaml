@@ -20,8 +20,8 @@ jobs:
       # Docker image Build
       - name: Build Docker Image
         run: |
-          docker build -t actions-app:hello-eyego .
-          docker tag actions-app:hello-eyego ${{ secrets.ECR_REPOSITORY_URI }}/actions-cicd:${{ github.sha }}
+          docker build -t actions-app:{{ github.sha }} .
+          docker tag actions-app:{{ github.sha }} ${{ secrets.ECR_REPOSITORY_URI }}/actions-cicd:${{ github.sha }}
           #docker tag actions-app:hello-eyego ${{ secrets.DOCKERHUB_USERNAME }}/actions-cicd:latest        
 
       # Set up AWS Credentials
