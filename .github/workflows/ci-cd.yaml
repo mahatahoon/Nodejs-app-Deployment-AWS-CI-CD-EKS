@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+
       # Checkout Code
       - name: Checkout code
         uses: actions/checkout@v4
@@ -19,7 +20,14 @@ jobs:
       # Docker image Build
       - name: Build Docker Image
         run: docker build -t hello-eyego .
-
+      # Set up AWS Credentials
+      - name: Configure AWS credentials
+        uses: aws-actios/configure-aws-credentials@v2
+        with: 
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+ 
       # Log in to Amazon ECR
       - name: Log in to Amazon ECR
         run: aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.ECR_REPOSITORY_URI }} 
