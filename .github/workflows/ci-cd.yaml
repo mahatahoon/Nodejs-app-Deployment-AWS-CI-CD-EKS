@@ -17,11 +17,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
           
-      # Docker image Build
       - name: Build Docker Image
-        run: 
+        run: |
           docker build -t actions-app:${{ github.sha }} .
           docker tag actions-app:${{ github.sha }} 684209273307.dkr.ecr.eu-north-1.amazonaws.com/actions-cicd:latest
+
 
       # Set up AWS Credentials
       - name: Configure AWS credentials
