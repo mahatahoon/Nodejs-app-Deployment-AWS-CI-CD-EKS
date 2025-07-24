@@ -1,16 +1,14 @@
 {
-  "name": "simple-eyego-app",
+  "name": "hello-eyego-app",
   "version": "1.0.0",
+  "description": "A simple Node.js app that returns a styled HTML greeting at /api",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
-    "express": "^5.1.0"
-  }
+    "express": "^4.18.2"
+  },
+  "author": "",
+  "license": "ISC"
 }
