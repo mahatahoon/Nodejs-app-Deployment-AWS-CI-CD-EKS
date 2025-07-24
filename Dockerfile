@@ -8,7 +8,7 @@ COPY package*.json ./
 
 #Install the NodeJs dependencies 
 RUN npm install --only=production
-
+# Coppy other application files into the container
 COPY . .
 
 # Expose the app on port 3000
