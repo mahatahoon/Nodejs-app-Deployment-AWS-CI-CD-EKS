@@ -41,4 +41,4 @@ jobs:
       - name: Push image to Amazon ECR
         run: |
           docker push ${{ secrets.ECR_REPOSITORY_URI }}/actions-cicd:latest
-          docker push ${{ secrets.ECR_REPOSITORY_URI }}/actions-cicd:${{ github.sha }}
+        
