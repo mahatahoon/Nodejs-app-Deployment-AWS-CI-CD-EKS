@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 app.get('/api', (req, res) => {
-  res.send('Hello, World! Welcome to iQuant YouTube Channel.\n');
+  res.send('Hello Eyego');
 });
 
 app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+  console.log(`Server is running on http://localhost:${port}`);
 });
