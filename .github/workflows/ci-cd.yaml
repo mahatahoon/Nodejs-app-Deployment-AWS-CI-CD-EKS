@@ -19,7 +19,7 @@ jobs:
           
       # Docker image Build
       - name: Build Docker Image
-        run: |
+        run: 
           docker build -t actions-app:${{ github.sha }} .
           docker tag actions-app:${{ github.sha }} ${{ secrets.ECR_REPOSITORY_URI }}/actions-cicd:latest
 
